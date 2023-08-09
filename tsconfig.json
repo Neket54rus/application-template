@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"strict": true, // Строгий режим
+		"outDir": "./dist/", // Путь, куда компилируется файлы
+		"noImplicitAny": true, // Подсвечивает места, где не указан тип
+		"module": "ESNext", // Использование модульной системы
+		"target": "es5", // Версия ES в который будет компилироваться код
+		"jsx": "react-jsx", // Использование jsx
+		"allowJs": true, // Позволяет компилятору обрабатывать не только ts файлы
+		"moduleResolution": "node", // Определяет каким способом будут импортироваться файлы
+		"esModuleInterop": true, // Для использования import
+		"allowSyntheticDefaultImports": true, // Для использования import
+		"baseUrl": ".", // Корневой путь до файлов, для абсолютного импорта
+		// Указываем откуда будут идти абсолютные импорты
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		// Изоляция импортов
+		"isolatedModules": true
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS" // Позволяет работать webpack с import/export
+		}
+	},
+	// Указываем пути для TS
+	"include": [
+		"./config/jest/setupTests.ts",
+		"./src/**/*.ts",
+		"./src/**/*.tsx"
+	]
+}

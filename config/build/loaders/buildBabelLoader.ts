@@ -21,13 +21,13 @@ export const buildBabelLoader = (props: BuildBabelLoaderProps) => ({
 					},
 				],
 				'@babel/plugin-transform-runtime',
-				props.isTsx &&
-					!props.isDev && [
-						babelRemovePropsPlugin,
-						{
-							props: ['data-testid'],
-						},
-					],
+				props.isTsx
+					&& !props.isDev && [
+					babelRemovePropsPlugin,
+					{
+						props: ['data-testid'],
+					},
+				],
 			].filter(Boolean),
 		},
 	},
